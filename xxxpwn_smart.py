@@ -107,7 +107,7 @@ def get_chars_by_likelihood(so_far, chars, common_chars):
     # Group charactes in bands of frequency
     max_freq = max(pred_chars.values())
     filtered_pred = [c for c in pred_chars.values() if c > 0]
-    min_freq = min(filtered_pred) if len(filtered_pred) > 0 else [0]
+    min_freq = min(filtered_pred) if len(filtered_pred) > 0 else 0
 
     step = (max_freq - min_freq)/num_bands_pred + 1
     # Predicted set goes into bands 3 to num_bands
