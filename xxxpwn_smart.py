@@ -138,7 +138,7 @@ def get_count_bst(expression, high=16, low=0):
     MAX_LENGTH = 10000
     TO_HIGH = False
     TO_LOW = False
-    guess = (high + low)/2
+    guess = (high + low)//2
     while guess != low and guess != high:
         if high >= MAX_LENGTH:
             sys.stderr.write("\n#Error: Surpassed max potential %s > %i#\n" %
@@ -149,7 +149,7 @@ def get_count_bst(expression, high=16, low=0):
         node_test = attack(cmd)
         if node_test:
             if not TO_LOW:
-                low /= 2
+                low //= 2
             TO_HIGH = True
             high = guess
         else:
@@ -157,7 +157,7 @@ def get_count_bst(expression, high=16, low=0):
                 high *= 2
             TO_LOW = True
             low = guess
-        guess = (high + low)/2
+        guess = (high + low)//2
     return guess
 
 
