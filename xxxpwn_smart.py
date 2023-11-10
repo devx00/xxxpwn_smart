@@ -1122,7 +1122,6 @@ if __name__ == "__main__":
 
     if not args.summary:
         xml_content += get_xml_bst(args.start_node)
-        xml_content = str(xml_content.encode('latin1'))
         print("\n\n### Parsed XML  ####:")
         try:
             # Warning The xml.dom.minidom module is not secure against maliciously constructed data.
