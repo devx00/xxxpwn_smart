@@ -1027,7 +1027,7 @@ if __name__ == "__main__":
     #    parser.error("--trie_delim requires a filename to be given, use -d")
     #    exit(1)
 
-    if not re.search('\$INJECT', args.inject_file):
+    if not re.search(b'\$INJECT', args.inject_file):
         sys.stderr.write(
             "### Error: Could not find '$INJECT' string in provided content:  ###\n%s" % args.inject_file)
         exit(3)
