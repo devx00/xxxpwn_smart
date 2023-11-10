@@ -801,7 +801,7 @@ def attack(inject):
                 s = ssl.wrap_socket(s)
             s.connect((args.host, args.port))
             # s.setblocking(0)
-            s.send(request)
+            s.send(request.encode())
         except Exception as e:
             if MAX == 0:
                 sys.stderr.write("### Max retries reached  ###\n")
