@@ -821,7 +821,7 @@ def attack(inject):
         data = s.recv(65534)
         if not data:
             break
-        total += data
+        total += data.decode()
     data = total
     s.close()
 
