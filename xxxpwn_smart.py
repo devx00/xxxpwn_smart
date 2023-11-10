@@ -295,8 +295,9 @@ def get_character_bst(node, position, chars):
        character.'''
     global args
 
-    remove = "\x0b\x0c"  # XPath doesn't support these 'printable' characters
-    chars = chars.translate(None, remove)
+    # XPath doesn't support these 'printable' characters
+    remove = {"\x0b": None, "\x0c": None}
+    chars = chars.translate(remove)
     node = to_lower(node)
 
     use_chars = get_quoted_chars(chars)
