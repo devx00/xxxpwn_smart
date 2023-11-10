@@ -836,6 +836,7 @@ def attack(inject):
                              headers, re.IGNORECASE | re.MULTILINE)
         try:
             cont_len = cont_len.groups()[0]
+            cont_len = int(cont_len)
         except AttributeError:
             #  sys.stderr.write("No Content-Length in HTTP response headers")
             #  raise e
