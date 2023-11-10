@@ -978,7 +978,7 @@ if __name__ == "__main__":
     group_adv_cs.add_argument("-u", "--use_characters", help="Use given string for BST character discovery",
                               dest="character_set", default=string.printable, metavar='CHARSET')
     group_adv_cs.add_argument("--common_characters", help="[For general nodes] After exhausting characters from dictionary prediction (if enabled), try the given set of characters before all the rest'). Use '' to disable",
-                              dest="common_chars", default=string.lowercase + ' .,?!-()', metavar='CHARSET')
+                              dest="common_chars", default=string.ascii_lowercase + ' .,?!-()', metavar='CHARSET')
     group_adv_cs.add_argument("--numeric_characters", help="[For numeric nodes] After exhausting characters from dictionary prediction (if enabled), try the given set of characters before all the rest. Use '' to disable",
                               dest="common_digits", default=string.digits + ' -.,$', metavar='CHARSET')
     group_adv_cs.add_argument("--unicode", help="Include Unicode characters to search space",
