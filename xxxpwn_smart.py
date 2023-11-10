@@ -919,7 +919,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "host", help="Hostname or IP to connect to", metavar='HOST')
     parser.add_argument("inject_file", help="File containing sample request with $INJECT as dynamic injection location",
-                        type=argparse.FileType('rb'), metavar='FILE')
+                        type=argparse.FileType('r'), metavar='FILE')
 
     # Global options
     parser.add_argument(
@@ -1027,7 +1027,7 @@ if __name__ == "__main__":
     #    parser.error("--trie_delim requires a filename to be given, use -d")
     #    exit(1)
 
-    if not re.search(b'\$INJECT', args.inject_file):
+    if not re.search('\$INJECT', args.inject_file):
         sys.stderr.write(
             "### Error: Could not find '$INJECT' string in provided content:  ###\n%s" % args.inject_file)
         exit(3)
